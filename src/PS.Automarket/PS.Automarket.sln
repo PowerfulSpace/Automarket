@@ -3,9 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Automarket.Web", "PS.Automarket.Web\PS.Automarket.Web.csproj", "{03A14BED-B89D-4489-9D2B-27A307625BE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8417170A-0314-4447-835E-90104D44AD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Automarket.Domain", "PS.Automarket.Domain\PS.Automarket.Domain.csproj", "{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03A14BED-B89D-4489-9D2B-27A307625BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A14BED-B89D-4489-9D2B-27A307625BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A14BED-B89D-4489-9D2B-27A307625BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A14BED-B89D-4489-9D2B-27A307625BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2} = {8417170A-0314-4447-835E-90104D44AD68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEFB5BB4-F4C5-4AF7-8C96-6E79B7910716}
