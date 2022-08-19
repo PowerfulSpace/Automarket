@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PS.Automarket.Domain.Entities;
 using PS.Automarket.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace PS.Automarket.Web.Controllers
 
         public IActionResult Index()
         {
+            //Car car = new Car()
+            //{
+            //    Name = "Audi",
+            //    Speed = 200
+            //};
             return View();
         }
 

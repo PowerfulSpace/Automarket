@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Automarket.Web", "PS.Aut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8417170A-0314-4447-835E-90104D44AD68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Automarket.Domain", "PS.Automarket.Domain\PS.Automarket.Domain.csproj", "{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS.Automarket.Domain", "PS.Automarket.Domain\PS.Automarket.Domain.csproj", "{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{EA56058B-849E-469F-9FB7-2EEE83037C7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.Automarket.DAL", "PS.Automarket.DAL\PS.Automarket.DAL.csproj", "{4CB20D37-77FA-4D5C-9E3D-A3B8D078D9B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +27,17 @@ Global
 		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CB20D37-77FA-4D5C-9E3D-A3B8D078D9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB20D37-77FA-4D5C-9E3D-A3B8D078D9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB20D37-77FA-4D5C-9E3D-A3B8D078D9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB20D37-77FA-4D5C-9E3D-A3B8D078D9B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12F40A43-FDF2-4F73-98CE-2496A0F71BE2} = {8417170A-0314-4447-835E-90104D44AD68}
+		{4CB20D37-77FA-4D5C-9E3D-A3B8D078D9B1} = {EA56058B-849E-469F-9FB7-2EEE83037C7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEFB5BB4-F4C5-4AF7-8C96-6E79B7910716}
