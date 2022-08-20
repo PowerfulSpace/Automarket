@@ -1,0 +1,18 @@
+﻿@using PS.Automarket.Domain.Entities
+@model IEnumerable<Car>
+
+
+@{
+    ViewData["Title"] = "Car Page";
+}
+
+@foreach (var car in Model)
+{
+   <div class="mb-5 p-2" style="border-color:forestgreen; border-style: solid">
+        <p>@car.Name</p>
+        <p>@car.Model</p>
+        <p>@car.Description</p>
+        <p>@car.Price</p>
+        <p>@car.DateCreate</p>
+   </div>
+}

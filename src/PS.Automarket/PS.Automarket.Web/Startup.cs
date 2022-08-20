@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PS.Automarket.DAL.Repositories;
+using PS.Automarket.DAL.Interfaces;
 
 namespace PS.Automarket.Web
 {
@@ -24,6 +26,8 @@ namespace PS.Automarket.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
+
+            services.AddScoped<ICarRepository, CarRepository>();
 
             services.AddControllersWithViews();
         }

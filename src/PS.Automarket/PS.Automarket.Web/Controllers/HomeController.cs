@@ -21,11 +21,6 @@ namespace PS.Automarket.Web.Controllers
 
         public IActionResult Index()
         {
-            //Car car = new Car()
-            //{
-            //    Name = "Audi",
-            //    Speed = 200
-            //};
             return View();
         }
 
