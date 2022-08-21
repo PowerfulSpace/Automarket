@@ -5,6 +5,7 @@ using PS.Automarket.Domain.Entities;
 using PS.Automarket.Domain.ViewModels.Car;
 using PS.Automarket.Service.Interfaces;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PS.Automarket.Web.Controllers
@@ -26,7 +27,7 @@ namespace PS.Automarket.Web.Controllers
 
             if(response.StatusCode == Domain.Enums.StatusCode.OK)
             {
-                return View(response.Data);
+                return View(response.Data.ToList());
             }
 
             return RedirectToAction("Error");

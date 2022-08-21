@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,6 @@ namespace PS.Automarket.Domain.ViewModels.Car
         public decimal Price { get; set; }
         public DateTime DateCreate { get; set; }
         public string TypeCar { get; set; }
+        public IFormFile Avatar { get; set; }
     }
 }

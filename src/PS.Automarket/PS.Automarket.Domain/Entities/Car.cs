@@ -1,4 +1,5 @@
-﻿using PS.Automarket.Domain.Enums;
+﻿using Microsoft.AspNetCore.Http;
+using PS.Automarket.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace PS.Automarket.Domain.Entities
         public decimal Price { get; set; }
         public DateTime DateCreate { get; set; }
         public TypeCar TypeCar { get; set; }
+        public IFormFile Avatar { get; set; }
     }
 }
