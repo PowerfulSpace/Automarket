@@ -14,7 +14,8 @@ namespace PS.Automarket.Service.Interfaces
         public Task<IBaseResponse<Car>> GetCarAsync(Guid id);
         public Task<IBaseResponse<Car>> GetCarByNameAsync(string name);
         public Task<IBaseResponse<IEnumerable<Car>>> GetCarsAsync();
-        public Task<IBaseResponse<bool>> CreateCarAsync(CarViewModel car);
+        public Task<IBaseResponse<bool>> CreateCarAsync(CarViewModel mode);
         public Task<IBaseResponse<bool>> DeleteCarAsync(Guid id);
+        public Task<IBaseResponse<Car>> EditCarAsync(Guid id, CarViewModel mode);
     }
 }

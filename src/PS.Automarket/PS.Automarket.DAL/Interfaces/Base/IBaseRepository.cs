@@ -12,5 +12,6 @@ namespace PS.Automarket.DAL.Interfaces.Base
         public Task<T> GetAsync(Guid id);
         public Task<IEnumerable<T>> SelectAsync();
         public Task<bool> DeleteAsync(T entity);
+        public Task<T> UpdateAsync(T entity);
     }
 }

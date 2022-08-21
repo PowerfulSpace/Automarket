@@ -55,8 +55,22 @@ namespace PS.Automarket.DAL.Repositories
             return true;
         }
 
-      
 
-       
+        public async Task<Car> UpdateAsync(Car entity)
+        {
+
+            if (entity == null) { return entity; }
+
+            try
+            {
+                _dbContext.Cars.Update(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception) { }
+
+            return entity;
+        }
+
+
     }
 }

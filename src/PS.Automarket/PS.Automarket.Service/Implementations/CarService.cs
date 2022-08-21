@@ -23,7 +23,7 @@ namespace PS.Automarket.Service.Implementations
         }
 
 
-
+        
         public async Task<IBaseResponse<Car>> GetCarAsync(Guid id)
         {
             var baseResponse = new BaseResponse<Car>();
@@ -117,7 +117,7 @@ namespace PS.Automarket.Service.Implementations
             
         }
 
-        public async Task<IBaseResponse<bool>> CreateCarAsync(CarViewModel carViewModel)
+        public async Task<IBaseResponse<bool>> CreateCarAsync(CarViewModel mode)
         {
             var baseResponse = new BaseResponse<bool>();
 
@@ -125,13 +125,13 @@ namespace PS.Automarket.Service.Implementations
             {
                 var car = new Car()
                 {
-                    Name = carViewModel.Name,
-                    Description = carViewModel.Description,
-                    Model = carViewModel.Model,
-                    Speed = carViewModel.Speed,
-                    Price = carViewModel.Price,
-                    DateCreate = carViewModel.DateCreate,
-                    TypeCar = (TypeCar)Convert.ToInt32(carViewModel.TypeCar)
+                    Name = mode.Name,
+                    Description = mode.Description,
+                    Model = mode.Model,
+                    Speed = mode.Speed,
+                    Price = mode.Price,
+                    DateCreate = mode.DateCreate,
+                    TypeCar = (TypeCar)Convert.ToInt32(mode.TypeCar)
                 };
 
 
@@ -143,7 +143,7 @@ namespace PS.Automarket.Service.Implementations
             }
             catch (Exception e)
             {
-                return new BaseResponse<bool>
+                return new BaseResponse<bool>()
                 {
                     Data = false,
                     Description = $"[CreateCarAsync] : {e.Message}",
@@ -176,7 +176,7 @@ namespace PS.Automarket.Service.Implementations
             }
             catch (Exception e)
             {
-                return new BaseResponse<bool>
+                return new BaseResponse<bool>()
                 {
                     Data = false,
                     Description = $"[DeleteCarAsync] : {e.Message}",
@@ -185,6 +185,48 @@ namespace PS.Automarket.Service.Implementations
             }
         }
 
-      
+
+
+        public async Task<IBaseResponse<Car>> EditCarAsync(Guid id, CarViewModel mode)
+        {
+            var baseResponse = new BaseResponse<Car>();
+
+            try
+            {
+                var car = await _carRepository.GetAsync(id);
+
+                if(car == null)
+                {
+                    baseResponse.Description = "Car not found";
+                    baseResponse.StatusCode = StatusCode.NotFound;
+
+                    return baseResponse;
+                }
+
+                car.Name = mode.Name;
+                car.Description = mode.Description;
+                car.Model = mode.Model;
+                car.Speed = mode.Speed;
+                car.Price = mode.Price;
+                car.DateCreate = mode.DateCreate;
+                //car.TypeCar = (TypeCar)Convert.ToInt32(mode.TypeCar);
+
+                await _carRepository.UpdateAsync(car);
+
+                baseResponse.Data = car;
+                baseResponse.StatusCode = StatusCode.OK;
+
+                return baseResponse;
+            }
+            catch (Exception e)
+            {
+                return new BaseResponse<Car>()
+                {
+                    Description = $"[EditCarAsync] : {e.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
     }
 }
