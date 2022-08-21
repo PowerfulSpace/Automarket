@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PS.Automarket.DAL.Repositories;
 using PS.Automarket.DAL.Interfaces;
+using PS.Automarket.Domain.Response;
+using PS.Automarket.Domain.Entities;
+using PS.Automarket.Service.Interfaces;
+using PS.Automarket.Service.Implementations;
 
 namespace PS.Automarket.Web
 {
@@ -28,6 +32,8 @@ namespace PS.Automarket.Web
             services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
 
             services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<ICarService, CarService>();
+            //services.AddScoped<IBaseResponse<IEnumerable<Car>>, BaseResponse<IEnumerable<Car>>>();
 
             services.AddControllersWithViews();
         }

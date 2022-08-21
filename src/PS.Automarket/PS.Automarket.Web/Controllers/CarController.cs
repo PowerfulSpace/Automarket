@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PS.Automarket.DAL.Interfaces;
 using PS.Automarket.Domain.Entities;
+using PS.Automarket.Service.Interfaces;
 using System;
 using System.Threading.Tasks;
 
@@ -8,36 +9,25 @@ namespace PS.Automarket.Web.Controllers
 {
     public class CarController : Controller
     {
+        private readonly ICarService _carService;
 
-        private readonly ICarRepository _carRepository;
-
-        public CarController(ICarRepository carRepository)
+        public CarController(ICarService carService)
         {
-            _carRepository = carRepository;
+            _carService = carService;
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetCars()
         {
-            var response = await _carRepository.SelectAsync();
+            var response = await _carService.GetCarsAsync();
 
-            var r1 = await _carRepository.GetByNameAsync("Mersedes");
-            var r2 = await _carRepository.GetAsync(Guid.Parse("B3A45441-BC92-4667-9DA9-8AD8312775B0"));
-
-            Car car = new Car()
+            if(response.StatusCode == Domain.Enums.StatusCode.OK)
             {
-                Name = "Ваз",
-                Model = "Телега",
-                Speed = 10,
-                Price = 20,
-                Description = "есть права бери её",
-                DateCreate = DateTime.Now
-            };
+                return View(response.Data);
+            }
 
-            await _carRepository.CreateAsync(car);
-            await _carRepository.DeleteAsync(car);
-
-            return View(response);
+            return RedirectToAction("Error");
         }
     }
 }

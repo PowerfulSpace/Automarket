@@ -6,9 +6,10 @@
     ViewData["Title"] = "Car Page";
 }
 
-@foreach (var car in Model)
+<div class="row">
+    @foreach (var car in Model)
 {
-   <div class="mb-5 p-2" style="border-color:forestgreen; border-style: solid">
+   <div class="col-2 mb-5 mx-2 p-2" style="border-color:forestgreen; border-style: solid">
         <p>@car.Name</p>
         <p>@car.Model</p>
         <p>@car.Description</p>
@@ -16,3 +17,4 @@
         <p>@car.DateCreate</p>
    </div>
 }
+</div>
