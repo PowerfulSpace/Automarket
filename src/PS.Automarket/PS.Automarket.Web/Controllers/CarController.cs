@@ -83,17 +83,17 @@ namespace PS.Automarket.Web.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Save(CarViewModel model)
+        public async Task<IActionResult> Save(CarViewModel carViewModel)
         {
             if (ModelState.IsValid)
             {
-                if(model.Id == Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                if(carViewModel.Id == Guid.Parse("00000000-0000-0000-0000-000000000000"))
                 {
-                    await _carService.CreateCarAsync(model);
+                    await _carService.CreateCarAsync(carViewModel);
                 }
                 else
                 {
-                    await _carService.EditCarAsync(model.Id, model);
+                    await _carService.EditCarAsync(carViewModel.Id, carViewModel);
                 }
             }
 
